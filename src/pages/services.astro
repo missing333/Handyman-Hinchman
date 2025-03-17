@@ -13,18 +13,22 @@ import Layout from '../layouts/Layout.astro';
             <h2>Plumbing Services</h2>
             <div class="services-list">
                 <div class="service-item">
+                    <div class="service-emoji">🚿</div>
                     <h3>Leaky Faucet Repair</h3>
                     <p>Fix dripping faucets to save water and prevent damage to fixtures</p>
                 </div>
                 <div class="service-item">
+                    <div class="service-emoji">🚽</div>
                     <h3>Toilet Replacement</h3>
                     <p>Remove old toilets and install new, efficient models</p>
                 </div>
                 <div class="service-item">
+                    <div class="service-emoji">🧼</div>
                     <h3>Sink Installation</h3>
                     <p>Install new kitchen or bathroom sinks with proper plumbing connections</p>
                 </div>
                 <div class="service-item">
+                    <div class="service-emoji">🔧</div>
                     <h3>Drain Unclogging</h3>
                     <p>Clear clogged drains in sinks, showers, and tubs</p>
                 </div>
@@ -35,18 +39,22 @@ import Layout from '../layouts/Layout.astro';
             <h2>Electrical Services</h2>
             <div class="services-list">
                 <div class="service-item">
+                    <div class="service-emoji">🔌</div>
                     <h3>Outlet Replacement</h3>
                     <p>Replace outdated or damaged electrical outlets</p>
                 </div>
                 <div class="service-item">
+                    <div class="service-emoji">💡</div>
                     <h3>Light Switch Installation</h3>
                     <p>Install or replace light switches, including dimmer switches</p>
                 </div>
                 <div class="service-item">
+                    <div class="service-emoji">🌀</div>
                     <h3>Ceiling Fan Installation</h3>
                     <p>Install new ceiling fans or replace existing ones</p>
                 </div>
                 <div class="service-item">
+                    <div class="service-emoji">✨</div>
                     <h3>Light Fixture Replacement</h3>
                     <p>Replace old light fixtures with new, energy-efficient models</p>
                 </div>
@@ -57,18 +65,22 @@ import Layout from '../layouts/Layout.astro';
             <h2>Outdoor Services</h2>
             <div class="services-list">
                 <div class="service-item">
+                    <div class="service-emoji">🌳</div>
                     <h3>Tree Trimming</h3>
                     <p>Prune and shape trees to maintain health and appearance</p>
                 </div>
                 <div class="service-item">
+                    <div class="service-emoji">💦</div>
                     <h3>Power Washing</h3>
                     <p>Clean driveways, decks, and siding with high-pressure washing</p>
                 </div>
                 <div class="service-item">
+                    <div class="service-emoji">🍂</div>
                     <h3>Gutter Cleaning</h3>
                     <p>Remove debris from gutters to prevent water damage</p>
                 </div>
                 <div class="service-item">
+                    <div class="service-emoji">🏡</div>
                     <h3>Deck Repair</h3>
                     <p>Fix loose boards, railings, and steps on wooden decks</p>
                 </div>
@@ -79,18 +91,22 @@ import Layout from '../layouts/Layout.astro';
             <h2>Assembly & Installation</h2>
             <div class="services-list">
                 <div class="service-item">
+                    <div class="service-emoji">🪑</div>
                     <h3>Furniture Assembly</h3>
                     <p>Assemble all types of furniture from any manufacturer</p>
                 </div>
                 <div class="service-item">
+                    <div class="service-emoji">📺</div>
                     <h3>TV Mounting</h3>
                     <p>Securely mount TVs on walls with hidden cable management</p>
                 </div>
                 <div class="service-item">
+                    <div class="service-emoji">📚</div>
                     <h3>Shelving Installation</h3>
                     <p>Install floating shelves, bookcases, and storage systems</p>
                 </div>
                 <div class="service-item">
+                    <div class="service-emoji">🚪</div>
                     <h3>Door Installation</h3>
                     <p>Install or replace interior and exterior doors</p>
                 </div>
@@ -98,6 +114,14 @@ import Layout from '../layouts/Layout.astro';
         </div>
     </section>
 
+    <section class="pricing-cta">
+        <div class="cta-content">
+            <h2>Looking for <span>Pricing</span>?</h2>
+            <p>Visit our pricing page to see our competitive rates and service fees</p>
+            <a href="/pricing" class="btn btn-primary">View Pricing</a>
+        </div>
+    </section>
+</Layout>
 
 <style>
     .services-header {
@@ -145,6 +169,15 @@ import Layout from '../layouts/Layout.astro';
         border-radius: 8px;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         transition: transform 0.2s, box-shadow 0.2s;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .service-emoji {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
     }
 
     .service-item:hover {
@@ -157,67 +190,19 @@ import Layout from '../layouts/Layout.astro';
         margin-bottom: 0.5rem;
     }
 
-    .pricing-info {
+    .pricing-cta {
         background-color: var(--secondary-color);
-        padding: 2rem;
+        padding: 3rem 1rem;
+        text-align: center;
+        margin: 2rem auto;
+        max-width: 900px;
         border-radius: 8px;
-        margin: 3rem 0;
         color: var(--text-light);
-        position: relative;
-        overflow: hidden;
     }
 
-    .pricing-info::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 5px;
-        background-color: var(--accent-color);
-    }
-
-    .pricing-info h2 {
-        text-align: center;
-        color: var(--text-light);
-        margin-bottom: 1.5rem;
-        position: relative;
-        padding-bottom: 0.5rem;
-    }
-
-    .pricing-info h2::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 60px;
-        height: 3px;
-        background-color: var(--accent-color);
-    }
-
-    .pricing-info ul {
-        max-width: 600px;
-        margin: 0 auto 2rem;
-    }
-
-    .pricing-info li {
-        margin-bottom: 0.75rem;
-        position: relative;
-        padding-left: 1.5rem;
-    }
-
-    .pricing-info li::before {
-        content: '•';
-        position: absolute;
-        left: 0;
-        color: var(--accent-color);
-        font-size: 1.2rem;
-    }
-
-    .contact-button {
-        text-align: center;
-        margin-top: 2rem;
+    .cta-content h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
     }
 
     .btn {
@@ -227,6 +212,7 @@ import Layout from '../layouts/Layout.astro';
         text-decoration: none;
         font-weight: bold;
         transition: all 0.3s ease;
+        margin-top: 1.5rem;
     }
 
     .btn-primary {
