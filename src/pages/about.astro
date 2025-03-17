@@ -1,0 +1,251 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout>
+    <div class="about-header">
+        <h1>About Handyman Hinchman</h1>
+        <p>Your trusted partner for home repairs and improvements</p>
+    </div>
+
+    <section class="about-story">
+        <div class="about-content">
+            <h2>Our Story</h2>
+            <p>Handyman Hinchman was founded in 2008 by John Hinchman, a skilled tradesman with over 15 years of experience in construction and home repair. What started as a one-man operation has grown into a trusted local business serving the greater community.</p>
+            <p>With a background in both residential and commercial maintenance, John combined his technical skills with a passion for customer service to create a handyman service that truly stands out from the competition.</p>
+            <p>Today, Handyman Hinchman is known for quality workmanship, reliability, and exceptional customer service. We take pride in helping homeowners and businesses maintain and improve their properties with professional, efficient service.</p>
+        </div>
+    </section>
+
+    <section class="about-mission">
+        <div class="mission-content">
+            <h2>Our Mission</h2>
+            <p>Our mission is simple: to provide reliable, high-quality handyman services that save our customers time, money, and stress. We believe that home repairs and improvements should be hassle-free experiences that enhance the comfort, safety, and value of your property.</p>
+            <div class="values-container">
+                <div class="value-item">
+                    <h3>Quality</h3>
+                    <p>We never cut corners and always use the right tools and materials for every job.</p>
+                </div>
+                <div class="value-item">
+                    <h3>Reliability</h3>
+                    <p>We show up on time, communicate clearly, and finish jobs when promised.</p>
+                </div>
+                <div class="value-item">
+                    <h3>Integrity</h3>
+                    <p>We provide honest assessments and fair pricing with no hidden fees or surprises.</p>
+                </div>
+                <div class="value-item">
+                    <h3>Expertise</h3>
+                    <p>Our continuous training ensures we're up-to-date on the latest techniques and products.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-team">
+        <h2>Meet Our Team</h2>
+        <div class="team-grid">
+            <div class="team-member">
+                <div class="member-photo placeholder-image"></div>
+                <h3>John Hinchman</h3>
+                <p class="member-title">Owner & Lead Handyman</p>
+                <p>With over 20 years of experience in home repair and maintenance, John brings expertise and leadership to every project.</p>
+            </div>
+            <div class="team-member">
+                <div class="member-photo placeholder-image"></div>
+                <h3>Mike Johnson</h3>
+                <p class="member-title">Electrical Specialist</p>
+                <p>A licensed electrician with 12 years of experience in residential and light commercial electrical work.</p>
+            </div>
+            <div class="team-member">
+                <div class="member-photo placeholder-image"></div>
+                <h3>Sarah Miller</h3>
+                <p class="member-title">Plumbing Technician</p>
+                <p>Specializing in all aspects of residential plumbing with a focus on water conservation and efficiency.</p>
+            </div>
+            <div class="team-member">
+                <div class="member-photo placeholder-image"></div>
+                <h3>David Rodriguez</h3>
+                <p class="member-title">Carpentry & Assembly Expert</p>
+                <p>A skilled carpenter with a knack for furniture assembly and custom woodworking solutions.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-cta">
+        <h2>Ready to work with us?</h2>
+        <p>Contact us today to discuss your project or schedule a service appointment.</p>
+        <div class="cta-buttons">
+            <a href="/contact" class="btn btn-primary">Contact Us</a>
+            <a href="/services" class="btn btn-secondary">Explore Services</a>
+        </div>
+    </section>
+</Layout>
+
+<style>
+    .about-header {
+        text-align: center;
+        padding: 2rem 1rem;
+        background-color: var(--primary-color);
+        color: white;
+        border-radius: 0 0 8px 8px;
+    }
+
+    .about-header h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+
+    section {
+        margin: 4rem 0;
+    }
+
+    .about-content, .mission-content {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    h2 {
+        color: var(--primary-color);
+        margin-bottom: 1.5rem;
+        position: relative;
+    }
+
+    .about-story p, .about-mission p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+    }
+
+    .values-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+
+    .value-item {
+        background-color: #f9fafb;
+        padding: 1.5rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .value-item h3 {
+        color: var(--accent-color);
+        margin-bottom: 0.75rem;
+    }
+
+    .about-mission {
+        background-color: #f3f4f6;
+        padding: 3rem 1rem;
+    }
+
+    .team-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+
+    .team-member {
+        background-color: white;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+    }
+
+    .team-member:hover {
+        transform: translateY(-5px);
+    }
+
+    .member-photo {
+        height: 200px;
+        background-color: #e5e7eb;
+    }
+
+    .placeholder-image {
+        background-color: #e5e7eb;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #9ca3af;
+    }
+
+    .placeholder-image::after {
+        content: "Photo";
+        font-size: 1.5rem;
+    }
+
+    .team-member h3 {
+        margin: 1rem 0 0.25rem 0;
+        padding: 0 1rem;
+    }
+
+    .member-title {
+        color: var(--primary-color);
+        font-weight: 500;
+        margin: 0 0 0.5rem 0;
+        padding: 0 1rem;
+    }
+
+    .team-member p {
+        padding: 0 1rem 1rem;
+    }
+
+    .about-cta {
+        text-align: center;
+        background-color: var(--primary-color);
+        color: white;
+        padding: 3rem 1rem;
+        border-radius: 8px;
+        max-width: 900px;
+        margin: 4rem auto;
+    }
+
+    .cta-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 1.5rem;
+        flex-wrap: wrap;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 0.75rem 1.5rem;
+        border-radius: 4px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: background-color 0.3s;
+    }
+
+    .btn-primary {
+        background-color: var(--accent-color);
+        color: var(--text-color);
+    }
+
+    .btn-primary:hover {
+        background-color: #e69009;
+    }
+
+    .btn-secondary {
+        background-color: white;
+        color: var(--primary-color);
+    }
+
+    .btn-secondary:hover {
+        background-color: #f3f4f6;
+    }
+
+    @media (max-width: 768px) {
+        .team-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .values-container {
+            grid-template-columns: 1fr;
+        }
+    }
+</style> 

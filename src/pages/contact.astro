@@ -1,0 +1,289 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout>
+    <div class="contact-header">
+        <h1>Contact Us</h1>
+        <p>Reach out for quotes, questions, or to schedule service</p>
+    </div>
+
+    <div class="contact-container">
+        <section class="contact-info">
+            <h2>Get In Touch</h2>
+            <div class="info-item">
+                <div class="info-icon">📱</div>
+                <div class="info-content">
+                    <h3>Phone</h3>
+                    <p>(555) 123-4567</p>
+                    <p class="info-note">Available Mon-Fri, 8am-6pm</p>
+                </div>
+            </div>
+            <div class="info-item">
+                <div class="info-icon">✉️</div>
+                <div class="info-content">
+                    <h3>Email</h3>
+                    <p>info@handymanhinchman.com</p>
+                    <p class="info-note">We typically respond within 24 hours</p>
+                </div>
+            </div>
+            <div class="info-item">
+                <div class="info-icon">📍</div>
+                <div class="info-content">
+                    <h3>Location</h3>
+                    <p>123 Repair Street</p>
+                    <p>Fixitville, FX 12345</p>
+                    <p class="info-note">Serving a 30-mile radius</p>
+                </div>
+            </div>
+            <div class="info-item">
+                <div class="info-icon">⏰</div>
+                <div class="info-content">
+                    <h3>Hours</h3>
+                    <p>Monday-Friday: 8am-6pm</p>
+                    <p>Saturday: 9am-3pm</p>
+                    <p>Sunday: Closed</p>
+                    <p class="info-note">Emergency services available 24/7</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-form">
+            <h2>Send a Message</h2>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="serviceType">Service Needed</label>
+                    <select id="serviceType" name="serviceType" required>
+                        <option value="" disabled selected>Select a service</option>
+                        <option value="plumbing">Plumbing</option>
+                        <option value="electrical">Electrical</option>
+                        <option value="assembly">Furniture Assembly</option>
+                        <option value="outdoor">Outdoor Services</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="preferredContact">Preferred Contact Method</label>
+                    <div class="radio-group">
+                        <div>
+                            <input type="radio" id="contactEmail" name="preferredContact" value="email" checked>
+                            <label for="contactEmail">Email</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="contactPhone" name="preferredContact" value="phone">
+                            <label for="contactPhone">Phone</label>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+                <p class="form-disclaimer">* This form is for demonstration purposes only. In a production environment, it would be connected to a backend service to process submissions.</p>
+            </form>
+        </section>
+    </div>
+
+    <section class="service-area">
+        <h2>Our Service Area</h2>
+        <p>Handyman Hinchman proudly serves the following areas:</p>
+        <div class="areas-grid">
+            <div class="area-item">Fixitville</div>
+            <div class="area-item">Repairburg</div>
+            <div class="area-item">Hammerton</div>
+            <div class="area-item">Wrenchfield</div>
+            <div class="area-item">Pliersville</div>
+            <div class="area-item">Toolbox City</div>
+            <div class="area-item">Nailton</div>
+            <div class="area-item">Screwdriver Heights</div>
+        </div>
+        <p class="area-note">If you're unsure if we service your area, please contact us!</p>
+    </section>
+</Layout>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('contactForm');
+    if (form) {
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for your message! This is a demo form, so no data has been submitted. In a real website, your message would be sent to our team.');
+        });
+    }
+});
+</script>
+
+<style>
+    .contact-header {
+        text-align: center;
+        padding: 2rem 1rem;
+        background-color: var(--primary-color);
+        color: white;
+        border-radius: 0 0 8px 8px;
+    }
+
+    .contact-header h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .contact-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        margin: 3rem 0;
+    }
+
+    .contact-info, .contact-form {
+        padding: 2rem;
+        background-color: #f9fafb;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .info-item {
+        display: flex;
+        margin-bottom: 2rem;
+    }
+
+    .info-icon {
+        font-size: 2rem;
+        margin-right: 1rem;
+        min-width: 40px;
+    }
+
+    .info-content h3 {
+        color: var(--primary-color);
+        margin-bottom: 0.5rem;
+    }
+
+    .info-note {
+        font-size: 0.9rem;
+        color: var(--secondary-color);
+        margin-top: 0.5rem;
+    }
+
+    .form-group {
+        margin-bottom: 1.5rem;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+    }
+
+    input, select, textarea {
+        width: 100%;
+        padding: 0.75rem;
+        border: 1px solid #d1d5db;
+        border-radius: 4px;
+        font-family: inherit;
+        font-size: 1rem;
+    }
+
+    input:focus, select:focus, textarea:focus {
+        border-color: var(--primary-color);
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    }
+
+    .radio-group {
+        display: flex;
+        gap: 2rem;
+    }
+
+    .radio-group div {
+        display: flex;
+        align-items: center;
+    }
+
+    .radio-group input {
+        width: auto;
+        margin-right: 0.5rem;
+    }
+
+    .radio-group label {
+        margin-bottom: 0;
+    }
+
+    .submit-btn {
+        display: block;
+        width: 100%;
+        padding: 0.75rem;
+        background-color: var(--accent-color);
+        color: var(--text-color);
+        font-weight: bold;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 1rem;
+        transition: background-color 0.3s;
+    }
+
+    .submit-btn:hover {
+        background-color: #e69009;
+    }
+
+    .form-disclaimer {
+        font-size: 0.8rem;
+        color: var(--secondary-color);
+        margin-top: 1rem;
+    }
+
+    .service-area {
+        text-align: center;
+        padding: 3rem 1rem;
+        background-color: #f3f4f6;
+        border-radius: 8px;
+        margin: 3rem 0;
+    }
+
+    .areas-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1rem;
+        max-width: 800px;
+        margin: 2rem auto;
+    }
+
+    .area-item {
+        background-color: white;
+        padding: 1rem;
+        border-radius: 4px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    .area-note {
+        color: var(--secondary-color);
+        font-style: italic;
+    }
+
+    h2 {
+        color: var(--primary-color);
+        margin-bottom: 1.5rem;
+    }
+
+    @media (max-width: 768px) {
+        .contact-container {
+            grid-template-columns: 1fr;
+        }
+
+        .info-item {
+            align-items: flex-start;
+        }
+    }
+</style> 

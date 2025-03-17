@@ -1,0 +1,219 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout>
+    <div class="services-header">
+        <h1>Our Services</h1>
+        <p>Professional handyman services for all your home repair needs</p>
+    </div>
+
+    <section class="services-section">
+        <div class="service-category">
+            <h2>Plumbing Services</h2>
+            <div class="services-list">
+                <div class="service-item">
+                    <h3>Leaky Faucet Repair</h3>
+                    <p>Fix dripping faucets to save water and prevent damage to fixtures</p>
+                </div>
+                <div class="service-item">
+                    <h3>Toilet Replacement</h3>
+                    <p>Remove old toilets and install new, efficient models</p>
+                </div>
+                <div class="service-item">
+                    <h3>Sink Installation</h3>
+                    <p>Install new kitchen or bathroom sinks with proper plumbing connections</p>
+                </div>
+                <div class="service-item">
+                    <h3>Drain Unclogging</h3>
+                    <p>Clear clogged drains in sinks, showers, and tubs</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="service-category">
+            <h2>Electrical Services</h2>
+            <div class="services-list">
+                <div class="service-item">
+                    <h3>Outlet Replacement</h3>
+                    <p>Replace outdated or damaged electrical outlets</p>
+                </div>
+                <div class="service-item">
+                    <h3>Light Switch Installation</h3>
+                    <p>Install or replace light switches, including dimmer switches</p>
+                </div>
+                <div class="service-item">
+                    <h3>Ceiling Fan Installation</h3>
+                    <p>Install new ceiling fans or replace existing ones</p>
+                </div>
+                <div class="service-item">
+                    <h3>Light Fixture Replacement</h3>
+                    <p>Replace old light fixtures with new, energy-efficient models</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="service-category">
+            <h2>Outdoor Services</h2>
+            <div class="services-list">
+                <div class="service-item">
+                    <h3>Tree Trimming</h3>
+                    <p>Prune and shape trees to maintain health and appearance</p>
+                </div>
+                <div class="service-item">
+                    <h3>Power Washing</h3>
+                    <p>Clean driveways, decks, and siding with high-pressure washing</p>
+                </div>
+                <div class="service-item">
+                    <h3>Gutter Cleaning</h3>
+                    <p>Remove debris from gutters to prevent water damage</p>
+                </div>
+                <div class="service-item">
+                    <h3>Deck Repair</h3>
+                    <p>Fix loose boards, railings, and steps on wooden decks</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="service-category">
+            <h2>Assembly & Installation</h2>
+            <div class="services-list">
+                <div class="service-item">
+                    <h3>Furniture Assembly</h3>
+                    <p>Assemble all types of furniture from any manufacturer</p>
+                </div>
+                <div class="service-item">
+                    <h3>TV Mounting</h3>
+                    <p>Securely mount TVs on walls with hidden cable management</p>
+                </div>
+                <div class="service-item">
+                    <h3>Shelving Installation</h3>
+                    <p>Install floating shelves, bookcases, and storage systems</p>
+                </div>
+                <div class="service-item">
+                    <h3>Door Installation</h3>
+                    <p>Install or replace interior and exterior doors</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing-info">
+        <h2>Pricing Information</h2>
+        <p>Our pricing is competitive, transparent, and based on the scope of the job. We provide free estimates before starting any work.</p>
+        <ul>
+            <li>Standard service call: $75 (includes first hour of labor)</li>
+            <li>Additional labor: $55 per hour</li>
+            <li>Materials: Charged at cost plus 10%</li>
+            <li>Emergency after-hours service: Additional $50 fee</li>
+        </ul>
+        <div class="contact-button">
+            <a href="/contact" class="btn btn-primary">Request a Quote</a>
+        </div>
+    </section>
+</Layout>
+
+<style>
+    .services-header {
+        text-align: center;
+        padding: 2rem 1rem;
+        background-color: var(--primary-color);
+        color: white;
+        border-radius: 0 0 8px 8px;
+    }
+
+    .services-header h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .services-section {
+        margin: 3rem 0;
+    }
+
+    .service-category {
+        margin-bottom: 4rem;
+    }
+
+    .service-category h2 {
+        color: var(--primary-color);
+        border-bottom: 2px solid var(--accent-color);
+        padding-bottom: 0.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .services-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+    }
+
+    .service-item {
+        background-color: #f9fafb;
+        padding: 1.5rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .service-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    .service-item h3 {
+        color: var(--secondary-color);
+        margin-bottom: 0.5rem;
+    }
+
+    .pricing-info {
+        background-color: #f3f4f6;
+        padding: 2rem;
+        border-radius: 8px;
+        margin: 3rem 0;
+    }
+
+    .pricing-info h2 {
+        text-align: center;
+        color: var(--primary-color);
+        margin-bottom: 1.5rem;
+    }
+
+    .pricing-info ul {
+        max-width: 600px;
+        margin: 0 auto 2rem;
+    }
+
+    .pricing-info li {
+        margin-bottom: 0.75rem;
+    }
+
+    .contact-button {
+        text-align: center;
+        margin-top: 2rem;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 0.75rem 1.5rem;
+        border-radius: 4px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: background-color 0.3s;
+    }
+
+    .btn-primary {
+        background-color: var(--accent-color);
+        color: var(--text-color);
+    }
+
+    .btn-primary:hover {
+        background-color: #e69009;
+    }
+
+    @media (max-width: 768px) {
+        .services-list {
+            grid-template-columns: 1fr;
+        }
+    }
+</style> 
