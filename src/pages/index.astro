@@ -8,6 +8,8 @@ import Layout from '../layouts/Layout.astro';
 <Layout>
 	<section class="hero">
 		<div class="hero-content">
+			<!-- hero logo -->
+			<img src="/Hlogo.svg" alt="Handyman Hinchman Logo" class="hero-logo" width="300">
 			<h1>Professional Handyman Services</h1>
 			<p>Quality repairs and improvements for your home or business</p>
 			<div class="cta-buttons">
@@ -63,7 +65,7 @@ import Layout from '../layouts/Layout.astro';
 		<h2>What Our Customers Say</h2>
 		<div class="testimonial-grid">
 			<div class="testimonial-card">
-				<p>"John from Handyman Hinchman fixed our leaking sink in no time. Professional, clean, and fair pricing. Highly recommend!"</p>
+				<p>"David from Handyman Hinchman fixed our leaking sink in no time. Professional, clean, and fair pricing. Highly recommend!"</p>
 				<p class="customer-name">- Sarah T.</p>
 			</div>
 			<div class="testimonial-card">
@@ -80,10 +82,13 @@ import Layout from '../layouts/Layout.astro';
 	</section>
 </Layout>
 
+
+
+
 <style>
 	.hero {
 		background-color: var(--primary-color);
-		color: white;
+		color: var(--text-light);
 		padding: 4rem 1rem;
 		text-align: center;
 	}
@@ -116,7 +121,7 @@ import Layout from '../layouts/Layout.astro';
 		border-radius: 4px;
 		text-decoration: none;
 		font-weight: bold;
-		transition: background-color 0.3s;
+		transition: all 0.3s ease;
 	}
 
 	.btn-primary {
@@ -125,16 +130,21 @@ import Layout from '../layouts/Layout.astro';
 	}
 
 	.btn-primary:hover {
-		background-color: #e69009;
+		background-color: #e6a61d;
+		transform: translateY(-2px);
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 	}
 
 	.btn-secondary {
-		background-color: white;
-		color: var(--primary-color);
+		background-color: transparent;
+		color: var(--text-light);
+		border: 2px solid var(--text-light);
 	}
 
 	.btn-secondary:hover {
-		background-color: #f3f4f6;
+		background-color: rgba(255, 255, 255, 0.1);
+		transform: translateY(-2px);
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 	}
 
 	section {
@@ -145,6 +155,19 @@ import Layout from '../layouts/Layout.astro';
 		text-align: center;
 		margin-bottom: 2rem;
 		color: var(--primary-color);
+		position: relative;
+		padding-bottom: 0.5rem;
+	}
+
+	h2::after {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 80px;
+		height: 3px;
+		background-color: var(--accent-color);
 	}
 
 	.services-grid, .testimonial-grid {
@@ -160,16 +183,22 @@ import Layout from '../layouts/Layout.astro';
 		padding: 1.5rem;
 		text-align: center;
 		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-		transition: transform 0.3s;
+		transition: transform 0.3s, box-shadow 0.3s;
 	}
 
 	.service-card:hover {
 		transform: translateY(-5px);
+		box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
 	}
 
 	.service-icon {
 		font-size: 2.5rem;
 		margin-bottom: 1rem;
+	}
+
+	.service-card h3 {
+		color: var(--primary-color);
+		margin-bottom: 0.5rem;
 	}
 
 	.services-link {
@@ -181,15 +210,24 @@ import Layout from '../layouts/Layout.astro';
 		color: var(--primary-color);
 		text-decoration: none;
 		font-weight: bold;
+		transition: color 0.3s;
+		padding-bottom: 2px;
+		border-bottom: 2px solid var(--primary-color);
 	}
 
 	.services-link a:hover {
-		text-decoration: underline;
+		color: var(--accent-color);
 	}
 
 	.about-preview {
-		background-color: #f3f4f6;
+		background-color: var(--secondary-color);
 		padding: 3rem 1rem;
+		color: var(--text-light);
+		border-radius: 8px;
+	}
+
+	.about-preview h2 {
+		color: var(--text-light);
 	}
 
 	.about-content {
@@ -207,11 +245,16 @@ import Layout from '../layouts/Layout.astro';
 		font-size: 1.1rem;
 	}
 
+	.benefits-list li::marker {
+		color: var(--accent-color);
+	}
+
 	.learn-more {
 		display: inline-block;
-		color: var(--primary-color);
+		color: var(--accent-color);
 		text-decoration: none;
 		font-weight: bold;
+		transition: color 0.3s;
 	}
 
 	.learn-more:hover {
@@ -219,10 +262,22 @@ import Layout from '../layouts/Layout.astro';
 	}
 
 	.testimonial-card {
-		background-color: white;
+		background-color: #f9fafb;
 		border-radius: 8px;
 		padding: 1.5rem;
 		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+		position: relative;
+	}
+
+	.testimonial-card::before {
+		content: '"';
+		position: absolute;
+		top: -15px;
+		left: 10px;
+		font-size: 4rem;
+		color: var(--accent-color);
+		opacity: 0.3;
+		font-family: serif;
 	}
 
 	.customer-name {
@@ -234,11 +289,28 @@ import Layout from '../layouts/Layout.astro';
 	.contact-cta {
 		text-align: center;
 		background-color: var(--primary-color);
-		color: white;
+		color: var(--text-light);
 		padding: 3rem 1rem;
 		border-radius: 8px;
 		max-width: 900px;
 		margin: 4rem auto;
+		position: relative;
+		overflow: hidden;
+	}
+
+	.contact-cta::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 5px;
+		background-color: var(--accent-color);
+	}
+
+
+	.contact-cta h2 {
+		color: var(--text-light);
 	}
 
 	@media (max-width: 768px) {
