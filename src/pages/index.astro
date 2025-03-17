@@ -1,12 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-	<section class="hero">
+	<section class="hero" style="max-width: 100%;">
 		<div class="hero-content">
 			<!-- hero logo -->
 			<img src="/Hlogo.svg" alt="Handyman Hinchman Logo" class="hero-logo" width="300">
@@ -86,6 +84,7 @@ import Layout from '../layouts/Layout.astro';
 
 
 <style>
+
 	.hero {
 		background-color: var(--primary-color);
 		color: var(--text-light);
@@ -148,7 +147,9 @@ import Layout from '../layouts/Layout.astro';
 	}
 
 	section {
-		margin: 4rem 0;
+		padding: 2rem;
+		margin: 0 auto;
+		max-width: 1200px;
 	}
 
 	h2 {
@@ -220,10 +221,9 @@ import Layout from '../layouts/Layout.astro';
 	}
 
 	.about-preview {
-		background-color: var(--secondary-color);
+		background-color: var(--primary-color);
 		padding: 3rem 1rem;
 		color: var(--text-light);
-		border-radius: 8px;
 	}
 
 	.about-preview h2 {
@@ -272,7 +272,7 @@ import Layout from '../layouts/Layout.astro';
 	.testimonial-card::before {
 		content: '"';
 		position: absolute;
-		top: -15px;
+		top: -5px;
 		left: 10px;
 		font-size: 4rem;
 		color: var(--accent-color);
