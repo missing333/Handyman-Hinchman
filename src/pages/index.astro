@@ -51,13 +51,39 @@ import Layout from '../layouts/Layout.astro';
 			<h2>Why Choose Handyman Hinchman?</h2>
 			<ul class="benefits-list">
 				<li>Over 15 years of experience</li>
-				<li>Licensed and insured professional</li>
 				<li>Competitive and transparent pricing</li>
 				<li>Satisfaction guaranteed</li>
 			</ul>
 			<a href="/about" class="learn-more">Learn More About Us</a>
 		</div>
 	</section>
+
+	
+	<section class="service-areas">
+		<h2>Service Areas</h2>
+		<div class="service-area-grid">
+			<div class="service-area-card">
+				<h3>Gilbert, AZ</h3>	
+			</div>
+			<div class="service-area-card">
+				<h3>Chandler, AZ</h3>	
+			</div>
+			<div class="service-area-card">
+				<h3>Queen Creek, AZ</h3>	
+			</div>
+			<div class="service-area-card">
+				<h3>San Tan Valley, AZ</h3>	
+			</div>
+			<div class="service-area-card">
+				<h3>Mesa, AZ</h3>	
+			</div>
+			<div class="service-area-card">
+				<h3>Tempe, AZ</h3>	
+			</div>
+		</div>
+	</section>
+
+
 
 	<section class="testimonials">
 		<h2>What Our Customers Say</h2>
@@ -72,6 +98,7 @@ import Layout from '../layouts/Layout.astro';
 			</div>
 		</div>
 	</section>
+
 
 	<section class="contact-cta">
 		<h2>Ready to Get Started?</h2>
@@ -171,11 +198,15 @@ import Layout from '../layouts/Layout.astro';
 		background-color: var(--accent-color);
 	}
 
-	.services-grid, .testimonial-grid {
+	.services-grid, .testimonial-grid, .service-area-grid {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 		gap: 2rem;
 		margin-bottom: 2rem;
+	}
+
+	.services-preview {
+		padding: 9rem 1rem;
 	}
 
 	.service-card {
@@ -300,6 +331,28 @@ import Layout from '../layouts/Layout.astro';
 
 
 
+	.service-areas {
+		padding: 3rem 1rem;
+		border-radius: 8px;
+		max-width: 900px;
+		margin: 4rem auto;
+	}
+
+	.service-area-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: 2rem;
+		margin-bottom: 2rem;
+	}
+	
+
+	.service-area-card {
+		background-color: #f9fafb;
+		border-radius: 8px;
+		padding: 1.5rem;
+		text-align: center;
+		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	}
 
 	.contact-cta h2 {
 		color: var(--text-light);
