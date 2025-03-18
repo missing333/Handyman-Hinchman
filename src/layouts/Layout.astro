@@ -27,7 +27,7 @@
 					<li><a href="/services">Services</a></li>
 					<li><a href="/pricing">Pricing</a></li>
 					<li><a href="/about">About</a></li>
-					<li><a href="/contact"><span style="color: var(--accent-color); font-weight: bold;">Contact</span></a></li>
+					<li><a href="/contact"><span id="contact-link">Contact</span></a></li>
 				</ul>
 			</nav>
 		</header>
@@ -76,6 +76,14 @@
 		justify-content: space-between;
 		align-items: center;
 		margin: 0 auto;
+	}
+
+	#contact-link {
+		color: var(--primary-color);
+		background-color: var(--accent-color);
+		padding: 0.5rem 1rem;
+		border-radius: 0.5rem;
+		font-weight: bold;
 	}
 	
 	.logo {
@@ -127,7 +135,7 @@
 		color: var(--text-light);
 		text-align: center;
 		padding: 1rem;
-		margin-top: 2rem;
+		padding-top: 4rem;
 	}
 
 	@media (max-width: 768px) {
@@ -136,13 +144,31 @@
 			gap: 1rem;
 		}
 
-		.logo {
+		.logo a{
 			margin-bottom: 0.5rem;
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			gap: 0.3rem;
+		}
+
+		.logo-text {
+			display:flex;
+			flex-direction: column;
+			align-items: left;
+			gap: 0.15rem;
 		}
 
 		nav ul {
 			flex-wrap: wrap;
 			justify-content: center;
+		}
+	}
+
+	
+	@media (max-width: 450px) {
+		nav ul li{
+			padding: 0 1.2rem;
 		}
 	}
 </style>
