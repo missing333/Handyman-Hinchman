@@ -322,9 +322,7 @@ import Layout from '../layouts/Layout.astro';
 		background-color: var(--primary-color);
 		color: var(--text-light);
 		padding: 3rem 1rem;
-		border-radius: 8px;
 		max-width: 900px;
-		margin: 4rem auto;
 		position: relative;
 		overflow: hidden;
 	}
@@ -359,12 +357,20 @@ import Layout from '../layouts/Layout.astro';
 	}
 
 	@media (max-width: 768px) {
+		.logo {
+			font-size: 0.5rem;
+		}
+		
 		.hero h1 {
 			font-size: 2rem;
 		}
 
 		.hero p {
 			font-size: 1.2rem;
+		}
+
+		.hero-logo {
+			width: 150px;
 		}
 
 		.services-grid, .testimonial-grid {

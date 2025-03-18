@@ -66,8 +66,8 @@ import Layout from '../layouts/Layout.astro';
     .about-header {
         text-align: center;
         padding: 2rem 1rem;
-        background-color: var(--primary-color);
-        color: white;
+        background-color: var(--background-color);
+        color: var(--primary-color);
     }
 
     .about-header h1 {
@@ -81,7 +81,7 @@ import Layout from '../layouts/Layout.astro';
 
     .about-content, .mission-content, .about-team {
         max-width: 800px;
-        margin: 0 auto;
+        margin: 2rem auto;
     }
 
     h2 {
@@ -91,6 +91,7 @@ import Layout from '../layouts/Layout.astro';
     }
 
     .about-story p, .about-mission p {
+        padding: 0 1rem;
         font-size: 1.1rem;
         line-height: 1.6;
         margin-bottom: 1.5rem;
@@ -173,17 +174,20 @@ import Layout from '../layouts/Layout.astro';
     }
 
     .team-member p {
-        padding: 0 1rem 1rem;
+        padding: 1rem 1rem;
+    }
+
+    .about-cta h2 {
+        color: var(--text-light);
     }
 
     .about-cta {
+        color: var(--text-light);
         text-align: center;
         background-color: var(--primary-color);
-        color: white;
         padding: 3rem 1rem;
-        border-radius: 8px;
         max-width: 900px;
-        margin: 4rem auto;
+        margin-bottom: 0;
     }
 
     .cta-buttons {
