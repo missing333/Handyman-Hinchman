@@ -3,6 +3,12 @@ import Layout from '../layouts/Layout.astro';
 import ContactCTA from '../components/ContactCTA.astro';
 import { Image } from 'astro:assets';
 import handwashImage from '../assets/images/handwashing.png';
+
+// Import service card images - you'll need to create these image files
+import plumbingImg from '../assets/images/sink2.png';
+import electricalImg from '../assets/images/electric.png';
+import outdoorImg from '../assets/images/tree.png';
+import assemblyImg from '../assets/images/furniture.png';
 ---
 
 <Layout>
@@ -38,24 +44,64 @@ import handwashImage from '../assets/images/handwashing.png';
 		<h2>Our Services</h2>
 		<div class="services-grid">
 			<div class="service-card">
-				<div class="service-icon">🔧</div>
+				<div class="service-img-container">
+					<Image 
+						src={plumbingImg} 
+						alt="Plumbing services"
+						width={250}
+						height={150}
+						format="avif"
+						quality={75}
+						class="service-img"
+					/>
+				</div>
 				<h3>Plumbing</h3>
-				<p>Fixing leaky faucets, toilet replacement, and more</p>
+				<p>From fixing leaky faucets, unclogging drains, to toilet replacement, and more!</p>
 			</div>
 			<div class="service-card">
-				<div class="service-icon">💡</div>
+				<div class="service-img-container">
+					<Image 
+						src={electricalImg} 
+						alt="Electrical services"
+						width={250}
+						height={150}
+						format="avif"
+						quality={75}
+						class="service-img"
+					/>
+				</div>
 				<h3>Electrical</h3>
-				<p>Outlet replacement, lightswitch installation, lighting fixes</p>
+				<p>Outlet and lightswitch replacement, ceiling fan installation, and more!</p>
 			</div>
 			<div class="service-card">
-				<div class="service-icon">🌳</div>
+				<div class="service-img-container">
+					<Image 
+						src={outdoorImg} 
+						alt="Outdoor services"
+						width={250}
+						height={150}
+						format="avif"
+						quality={75}
+						class="service-img"
+					/>
+				</div>
 				<h3>Outdoor</h3>
-				<p>Tree trimming, power washing, deck repairs</p>
+				<p>Tree trimming, junk removal, power washing, deck repairs, and more!</p>
 			</div>
 			<div class="service-card">
-				<div class="service-icon">🪑</div>
+				<div class="service-img-container">
+					<Image 
+						src={assemblyImg} 
+						alt="Assembly services"
+						width={250}
+						height={150}
+						format="avif"
+						quality={75}
+						class="service-img"
+					/>
+				</div>
 				<h3>Assembly</h3>
-				<p>Furniture assembly, shelving installation</p>
+				<p>Furniture assembly, tv/mirror mounting, shelving installation, and more!</p>
 			</div>
 		</div>
 		<div class="services-link">
@@ -238,10 +284,27 @@ import handwashImage from '../assets/images/handwashing.png';
 	.service-card {
 		background-color: #f9fafb;
 		border-radius: 8px;
-		padding: 1.5rem;
-		text-align: center;
+		padding: 0; /* Changed to 0 to accommodate image */
+		text-align: left;
 		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 		transition: transform 0.3s, box-shadow 0.3s;
+		display: flex;
+		flex-direction: column;
+		overflow: hidden; /* Ensures the image doesn't overflow */
+		height: 100%; /* Ensures all cards are the same height */
+	}
+
+	.service-img-container {
+		width: 100%;
+		height: 150px;
+		overflow: hidden;
+	}
+
+	.service-img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transition: transform 0.3s ease;
 	}
 
 	.service-card:hover {
@@ -249,14 +312,17 @@ import handwashImage from '../assets/images/handwashing.png';
 		box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
 	}
 
-	.service-icon {
-		font-size: 2.5rem;
-		margin-bottom: 1rem;
-	}
-
 	.service-card h3 {
 		color: var(--primary);
-		margin-bottom: 0.5rem;
+		padding: 1.2rem;
+		margin-bottom: -2rem;
+	}
+
+	.service-card p {
+		padding: 1.5rem;
+		margin-top: -12.5rem;
+		margin: 0;
+		text-align: left;
 	}
 
 	.services-link {
@@ -266,11 +332,6 @@ import handwashImage from '../assets/images/handwashing.png';
 
 	.services-link a {
 		color: var(--primary);
-		text-decoration: none;
-		font-weight: bold;
-		transition: color 0.3s;
-		padding-bottom: 2px;
-		border-bottom: 2px solid var(--primary);
 	}
 
 	.services-link a:hover {
@@ -424,7 +485,15 @@ import handwashImage from '../assets/images/handwashing.png';
 			font-size: 1.2rem;
 		}
 
-		.services-grid, .testimonial-grid {
+		
+
+		.testimonial-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	@media (max-width: 480px) {
+		.service-area-grid {
 			grid-template-columns: 1fr;
 		}
 	}
