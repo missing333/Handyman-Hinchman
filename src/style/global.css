@@ -79,7 +79,7 @@ section:nth-child(odd) {
 }
 
 .btn-primary {
-	color: var(--primary);
+	color: var(--text);
 	background-color: var(--primary);
 	border: 2px solid var(--primary);
 	border-radius: 8px;
