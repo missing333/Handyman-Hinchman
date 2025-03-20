@@ -1,18 +1,19 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import ContactCTA from '../components/ContactCTA.astro';
 ---
 
 <Layout>
-    <div class="about-header">
-        <h1>About Handyman Hinchman</h1>
+    <div class="page-header">
+        <h1>About <span class="title-span">Handyman Hinchman</span></h1>
         <p>Your trusted partner for home repairs and improvements</p>
     </div>
-
+<section style="padding:0;"></section>
     <section class="about-story">
         <div class="about-content">
             <h2>Our Story</h2>
-            <p>Handyman Hinchman was founded by David Hinchman, a skilled jack-of-all trades with over 15 years of experience in construction and home repair. </p>
-            <p>With a background in both residential and commercial maintenance, David combined his technical skills with a passion for customer service to create a handyman service that truly stands out from the competition.</p>
+            <p>Handyman Hinchman was founded by John Hinchman, a skilled jack-of-all trades with over 15 years of experience in construction and home repair. </p>
+            <p>With a background in both residential and commercial maintenance, John combined his technical skills with a passion for customer service to create a handyman service that truly stands out from the competition.</p>
             <p>Today, Handyman Hinchman is known for quality workmanship, reliability, and exceptional customer service. We take pride in helping homeowners and businesses maintain and improve their properties with professional, efficient service.</p>
         </div>
     </section>
@@ -43,41 +44,25 @@ import Layout from '../layouts/Layout.astro';
         <div class="team-grid">
             <div class="team-member">
                 <div class="member-photo placeholder-image"></div>
-                <h3>David Hinchman</h3>
+                <h3>John Hinchman</h3>
                 <p class="member-title">Owner & Lead Handyman</p>
-                <p>With over 20 years of experience in home repair and maintenance, David brings expertise and leadership to every project.</p>
+                <p>With over 20 years of experience in home repair and maintenance, John brings expertise and leadership to every project.</p>
             </div>
         </div>
     </section>
 
-    <section class="about-cta">
-        <h2>Ready to work with us?</h2>
-        <p>Contact us today to discuss your project or schedule a service appointment.</p>
-        <div class="cta-buttons">
-            <a href="/contact" class="btn btn-primary">Contact Us</a>
-            <a href="/services" class="btn btn-secondary">Explore Services</a>
-        </div>
-    </section>
+    <ContactCTA />
 </Layout>
 
 
 
 <style>
-    .about-header {
-        text-align: center;
-        padding: 2rem 1rem;
-        background-color: var(--background-color);
-        color: var(--primary-color);
-    }
 
     .about-header h1 {
         font-size: 2.5rem;
         margin-bottom: 1rem;
     }
 
-    section {
-        margin: 4rem 0;
-    }
 
     .about-content, .mission-content, .about-team {
         max-width: 800px;
@@ -117,7 +102,6 @@ import Layout from '../layouts/Layout.astro';
     }
 
     .about-mission {
-        background-color: #f3f4f6;
         padding: 3rem 1rem;
     }
 
@@ -177,44 +161,8 @@ import Layout from '../layouts/Layout.astro';
         padding: 1rem 1rem;
     }
 
-    .about-cta h2 {
-        color: var(--text-light);
-    }
 
-    .about-cta {
-        color: var(--text-light);
-        text-align: center;
-        background-color: var(--primary-color);
-        padding: 3rem 1rem;
-        max-width: 900px;
-        margin-bottom: 0;
-    }
 
-    .cta-buttons {
-        display: flex;
-        justify-content: center;
-        gap: 1rem;
-        margin-top: 1.5rem;
-        flex-wrap: wrap;
-    }
-
-    .btn {
-        display: inline-block;
-        padding: 0.75rem 1.5rem;
-        border-radius: 4px;
-        text-decoration: none;
-        font-weight: bold;
-        transition: background-color 0.3s;
-    }
-
-    .btn-primary {
-        background-color: var(--accent-color);
-        color: var(--text-color);
-    }
-
-    .btn-primary:hover {
-        background-color: #e69009;
-    }
 
     .btn-secondary {
         background-color: white;

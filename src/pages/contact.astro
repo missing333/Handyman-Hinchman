@@ -3,8 +3,8 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout>
-    <div class="contact-header">
-        <h1>Contact <span>Us</span></h1>
+    <div class="page-header">
+        <h1>Contact <span class="title-span">Us</span></h1>
         <p>Reach out for quotes, questions, or to schedule service</p>
     </div>
 
@@ -43,7 +43,6 @@ import Layout from '../layouts/Layout.astro';
                     <p>Monday-Friday: 8am-6pm</p>
                     <p>Saturday: 9am-3pm</p>
                     <p>Sunday: Closed</p>
-                    <p class="info-note">Emergency services available 24/7</p>
                 </div>
             </div>
         </section>
@@ -97,17 +96,31 @@ import Layout from '../layouts/Layout.astro';
         </section>
     </div>
 
-    <section class="service-area">
-        <h2>Our Service Area</h2>
-        <p>Handyman Hinchman proudly serves the following areas:</p>
-        <div class="areas-grid">
-            <div class="area-item">Gilbert</div>
-            <div class="area-item">Chandler</div>
-            <div class="area-item">San Tan</div>
-            <div class="area-item">East Mesa</div>
-        </div>
-        <p class="area-note">If you're unsure if we service your area, please contact us!</p>
-    </section>
+    
+	<section class="service-areas">
+		<h2>Service Areas</h2>
+		<div class="service-area-grid">
+			<div class="service-area-card">
+				<h3>Gilbert, AZ</h3>	
+			</div>
+			<div class="service-area-card">
+				<h3>Chandler, AZ</h3>	
+			</div>
+			<div class="service-area-card">
+				<h3>Queen Creek, AZ</h3>	
+			</div>
+			<div class="service-area-card">
+				<h3>San Tan Valley, AZ</h3>	
+			</div>
+			<div class="service-area-card">
+				<h3>Mesa, AZ</h3>	
+			</div>
+			<div class="service-area-card">
+				<h3>Tempe, AZ</h3>	
+			</div>
+		</div>
+	</section>
+
 </Layout>
 
 <script>
@@ -126,34 +139,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 <style>
-    .contact-header {
-        text-align: center;
-        padding: 2rem 1rem;
-        background-color: var(--background-color);
-        color: var(--primary-color);
-    }
-
-    .contact-header h1 {
-        font-size: 2.5rem;
-        margin-bottom: 1rem;
-    }
-
-    h1 span, h2 span {
-        color: var(--accent-color);
-    }
-
     .contact-container {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
         gap: 2rem;
-        max-width: 1200px;
+        max-width: 1000px;
         margin: 3rem auto;
         padding: 0 1rem;
+        
     }
 
     .contact-info, .contact-form {
+        background-color: var(--primary-light);
         padding: 2rem;
-        background-color: #f9fafb;
         border-radius: 8px;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
@@ -176,8 +175,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     .info-note {
         font-size: 0.9rem;
-        color: var(--secondary-color);
         margin-top: 0.5rem;
+        font-style: italic;
     }
 
     .form-group {
@@ -191,18 +190,18 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     input, select, textarea {
+        background-color: var(--background);
         width: 100%;
         padding: 0.75rem;
-        border: 1px solid #d1d5db;
-        border-radius: 4px;
+        border: 2px solid var(--primary-light);
+        border-radius: 8px;
         font-family: inherit;
         font-size: 1rem;
     }
 
     input:focus, select:focus, textarea:focus {
-        border-color: var(--primary-color);
+        border-color: var(--primary);
         outline: none;
-        box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
     }
 
     .radio-group {
@@ -228,18 +227,19 @@ document.addEventListener('DOMContentLoaded', () => {
         display: block;
         width: 100%;
         padding: 0.75rem;
-        background-color: var(--accent-color);
-        color: var(--text-color);
+        background-color: var(--primary);
+        color: var(--background);
         font-weight: bold;
         border: none;
         border-radius: 4px;
         cursor: pointer;
         font-size: 1rem;
-        transition: background-color 0.3s;
+        transition: transform 0.3s;
     }
 
     .submit-btn:hover {
-        background-color: #e69009;
+        transform: scale(1.05);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, .3);
     }
 
     .form-disclaimer {
@@ -255,45 +255,51 @@ document.addEventListener('DOMContentLoaded', () => {
         border-radius: 8px;
     }
 
-    .areas-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        gap: 1rem;
-        max-width: 800px;
-        margin: 2rem auto;
+	/* //////////////Service Areas////////////// */
+	.service-areas {
+		padding: 3rem 1rem;
+		border-radius: 8px;
+		max-width: 900px;
+		margin: 4rem auto;
+	}
+
+    .service-areas h2 {
+        text-align: center;
+        color: var(--text);
+        font-size: 2.2rem;
     }
 
-    .area-item {
-        background-color: white;
-        padding: 1rem;
-        border-radius: 4px;
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+	.service-area-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: 2rem;
+		margin-bottom: 2rem;
+	}
+	
+
+	.service-area-card {
+		background-color: #f9fafb;
+		border-radius: 8px;
+		padding: 1.5rem;
+		text-align: center;
+		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	}
+
+
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
     }
 
-    .area-note {
-        color: var(--secondary-color);
-        font-style: italic;
+    .info-item {
+        align-items: flex-start;
     }
+}
 
-    h2 {
-        color: var(--primary-color);
-        margin-bottom: 1.5rem;
+@media (max-width: 400px) {
+    .contact-container {
+        display: flex;
+        flex-direction: column;
     }
-
-    @media (max-width: 768px) {
-        .contact-container {
-            grid-template-columns: 1fr;
-        }
-
-        .info-item {
-            align-items: flex-start;
-        }
-    }
-        
-    @media (max-width: 400px) {
-        .contact-container {
-            display: flex;
-            flex-direction: column;
-        }
-    }
+}
 </style> 

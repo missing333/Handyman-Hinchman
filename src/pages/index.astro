@@ -1,21 +1,23 @@
 ---
 import Layout from '../layouts/Layout.astro';
-
+import ContactCTA from '../components/ContactCTA.astro';
 ---
 
 <Layout>
-	<section class="hero" style="max-width: 100%;">
+	<section class="hero">
 		<div class="hero-content">
 			<!-- hero logo -->
-			<img src="/Hlogo.svg" alt="Handyman Hinchman Logo" class="hero-logo" width="300">
-			<h1>Professional Handyman Services</h1>
-			<p>Quality repairs and improvements for your home or business</p>
+			<h1>Need minor home repairs?</h1>
+			<p>We are cheaper than a specialty contractor!</p>
 			<div class="cta-buttons">
-				<a href="/contact" class="btn btn-primary">Get a Quote</a>
+				<a href="/pricing" class="btn btn-primary">Flat Pricing</a>
 				<a href="/services" class="btn btn-secondary">Our Services</a>
 			</div>
 		</div>
+		<div class="hero-logo"></div>
 	</section>
+
+
 
 	<section class="services-preview">
 		<h2>Our Services</h2>
@@ -45,6 +47,8 @@ import Layout from '../layouts/Layout.astro';
 			<a href="/services">View All Services</a>
 		</div>
 	</section>
+
+
 
 	<section class="about-preview">
 		<div class="about-content">
@@ -100,11 +104,10 @@ import Layout from '../layouts/Layout.astro';
 	</section>
 
 
-	<section class="contact-cta">
-		<h2>Ready to Get Started?</h2>
-		<p>Contact us today for a free quote on your project</p>
-		<a href="/contact" class="btn btn-primary">Contact Us</a>
-	</section>
+	<ContactCTA />
+		
+	
+
 </Layout>
 
 
@@ -113,16 +116,37 @@ import Layout from '../layouts/Layout.astro';
 <style>
 
 	.hero {
-		background-color: var(--primary-color);
-		color: var(--text-light);
-		padding: 4rem 1rem;
+		color: var(--text);
+		padding: 0 1rem 3rem 1rem;
 		text-align: center;
+		display: grid;
+		grid-template-columns: 1fr 2fr;
+		position: relative;
+		max-width: 1200px;
+		margin: 0 auto;
 	}
 
 	.hero-content {
-		max-width: 800px;
-		margin: 0 auto;
+		grid-column: 1 / 2;
+		grid-row: 1;
+		z-index: 2;
+		padding: 2rem;
+		margin: auto;
+		margin-right: -90px; /* Creates overlap */
 	}
+
+	.hero-logo{
+		grid-column: 2 / 3;
+		grid-row: 1;
+		padding: 0 3rem;
+		height: 500px;
+		clip-path: polygon(0 0, 100% 0, 100% 100%, 40% 100%);
+		opacity: 0.75;
+		background-image: url('../assets/images/handwash.png');
+		background-size: cover;
+		background-position: center;
+	}
+
 
 	.hero h1 {
 		font-size: 3rem;
@@ -141,48 +165,33 @@ import Layout from '../layouts/Layout.astro';
 		flex-wrap: wrap;
 	}
 
-	.btn {
-		display: inline-block;
-		padding: 0.75rem 1.5rem;
-		border-radius: 4px;
-		text-decoration: none;
-		font-weight: bold;
-		transition: all 0.3s ease;
-	}
-
 	.btn-primary {
-		background-color: var(--accent-color);
-		color: var(--text-color);
+		background-color: var(--primary);
+		color: var(--background);
 	}
 
 	.btn-primary:hover {
-		background-color: #e6a61d;
-		transform: translateY(-2px);
-		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+		transform: scale(1.05);
+		box-shadow: 0 4px 8px rgba(0, 0, 0, .3);
 	}
 
 	.btn-secondary {
-		background-color: transparent;
-		color: var(--text-light);
-		border: 2px solid var(--text-light);
+		background-color: var(--background);
+		color: var(--text);
+		border: 2px solid var(--text);
 	}
 
 	.btn-secondary:hover {
-		background-color: rgba(255, 255, 255, 0.1);
-		transform: translateY(-2px);
-		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+		transform: scale(1.05);
+		box-shadow: 0 4px 8px rgba(0, 0, 0, .3);
 	}
 
-	section {
-		padding: 2rem;
-		margin: 0 auto;
-		max-width: 1200px;
-	}
+
 
 	h2 {
 		text-align: center;
 		margin-bottom: 2rem;
-		color: var(--primary-color);
+		color: var(--text);
 		position: relative;
 		padding-bottom: 0.5rem;
 	}
@@ -193,11 +202,13 @@ import Layout from '../layouts/Layout.astro';
 		bottom: 0;
 		left: 50%;
 		transform: translateX(-50%);
-		width: 80px;
+		width: 180px;
 		height: 3px;
-		background-color: var(--accent-color);
+		background-color: var(--primary);
 	}
 
+
+	/* //////////////Services grid////////////// */
 	.services-grid, .testimonial-grid, .service-area-grid {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -206,7 +217,7 @@ import Layout from '../layouts/Layout.astro';
 	}
 
 	.services-preview {
-		padding: 9rem 1rem;
+		padding: 0rem 1rem;
 	}
 
 	.service-card {
@@ -229,7 +240,7 @@ import Layout from '../layouts/Layout.astro';
 	}
 
 	.service-card h3 {
-		color: var(--primary-color);
+		color: var(--primary);
 		margin-bottom: 0.5rem;
 	}
 
@@ -239,36 +250,41 @@ import Layout from '../layouts/Layout.astro';
 	}
 
 	.services-link a {
-		color: var(--primary-color);
+		color: var(--primary);
 		text-decoration: none;
 		font-weight: bold;
 		transition: color 0.3s;
 		padding-bottom: 2px;
-		border-bottom: 2px solid var(--primary-color);
+		border-bottom: 2px solid var(--primary);
 	}
 
 	.services-link a:hover {
-		color: var(--accent-color);
+		color: var(--secondary);
+		border-bottom: 2px solid var(--secondary);
 	}
 
+
+
+
+	/* //////////////About Preview////////////// */
 	.about-preview {
-		background-color: var(--primary-color);
+		margin-top: 4rem;
 		padding: 3rem 1rem;
-		color: var(--text-light);
-	}
-
-	.about-preview h2 {
-		color: var(--text-light);
+		display: flex;
 	}
 
 	.about-content {
-		max-width: 800px;
 		margin: 0 auto;
+		padding: 3rem;
+		border: 2px solid var(--primary);
+		border-radius: 8px;
 	}
 
 	.benefits-list {
 		margin: 2rem 0;
 		padding-left: 1.5rem;
+		align-items: center;
+		justify-content: center;
 	}
 
 	.benefits-list li {
@@ -277,21 +293,51 @@ import Layout from '../layouts/Layout.astro';
 	}
 
 	.benefits-list li::marker {
-		color: var(--accent-color);
+		color: var(--darkgray);
 	}
 
 	.learn-more {
-		display: inline-block;
-		color: var(--accent-color);
+		color: var(--primary);
 		text-decoration: none;
 		font-weight: bold;
 		transition: color 0.3s;
+		padding-bottom: 2px;
+		border-bottom: 2px solid var(--primary);
 	}
 
 	.learn-more:hover {
-		text-decoration: underline;
+		color: var(--secondary);
+		border-bottom: 2px solid var(--secondary);
 	}
 
+
+
+	
+	/* //////////////Service Areas////////////// */
+	.service-areas {
+		padding: 3rem 1rem;
+		border-radius: 8px;
+		max-width: 900px;
+	}
+
+	.service-area-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: 2rem;
+		margin-bottom: 2rem;
+	}
+	
+
+	.service-area-card {
+		background-color: #f9fafb;
+		border-radius: 8px;
+		text-align: center;
+		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	}
+
+
+
+	/* //////////////Testimonials////////////// */
 	.testimonial-card {
 		background-color: #f9fafb;
 		border-radius: 8px;
@@ -306,7 +352,7 @@ import Layout from '../layouts/Layout.astro';
 		top: -5px;
 		left: 10px;
 		font-size: 4rem;
-		color: var(--accent-color);
+		color: var(--primary);
 		opacity: 0.3;
 		font-family: serif;
 	}
@@ -314,51 +360,34 @@ import Layout from '../layouts/Layout.astro';
 	.customer-name {
 		font-weight: bold;
 		text-align: right;
-		color: var(--secondary-color);
-	}
-
-	.contact-cta {
-		text-align: center;
-		background-color: var(--primary-color);
-		color: var(--text-light);
-		padding: 3rem 1rem;
-		max-width: 900px;
-		position: relative;
-		overflow: hidden;
+		color: var(--primary);
 	}
 
 
 
-	.service-areas {
-		padding: 3rem 1rem;
-		border-radius: 8px;
-		max-width: 900px;
-		margin: 4rem auto;
-	}
 
-	.service-area-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-		gap: 2rem;
-		margin-bottom: 2rem;
-	}
-	
-
-	.service-area-card {
-		background-color: #f9fafb;
-		border-radius: 8px;
-		padding: 1.5rem;
-		text-align: center;
-		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-	}
-
-	.contact-cta h2 {
-		color: var(--text-light);
-	}
 
 	@media (max-width: 768px) {
 		.logo {
 			font-size: 0.5rem;
+		}
+
+		.hero {
+        grid-template-columns: 1fr; /* Change to single column */
+		}
+		
+		.hero-content {
+			grid-column: 1; /* Span the only column */
+			grid-row: 1;
+			margin: auto; /* Remove the overlap */
+			padding: 1rem;
+		}
+		
+		.hero-logo {
+			grid-column: 1; /* Span the only column */
+			grid-row: 2; /* Place below content */
+			margin-top: 1rem;
+			height: 300px; /* Shorter height on mobile */
 		}
 		
 		.hero h1 {
@@ -370,7 +399,7 @@ import Layout from '../layouts/Layout.astro';
 		}
 
 		.hero-logo {
-			width: 150px;
+			margin-top: 2rem;
 		}
 
 		.services-grid, .testimonial-grid {

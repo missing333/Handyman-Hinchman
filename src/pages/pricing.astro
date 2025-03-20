@@ -1,26 +1,22 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import ContactCTA from '../components/ContactCTA.astro';
 ---
 
 <Layout>
     <div class="page-header">
         <div class="container">
-            <h1>Our <span>Pricing</span></h1>
+            <h1>Our <span class="title-span">Pricing</span></h1>
             <p>Transparent and competitive rates for all your handyman needs</p>
         </div>
     </div>
 
-    <div class="container">
-        <section class="pricing-section">
-            <div class="pricing-intro">
-                <h2>Clear & Honest <span>Pricing</span></h2>
-                <p>At Handyman Hinchman, we believe in complete transparency when it comes to our pricing. Our rates are competitive and based on the scope of each job. We provide free estimates before starting any work so you'll never be surprised by the final bill.</p>
-            </div>
-
+        <section class="pricing-section">           
             <div class="pricing-details">
                 <div class="pricing-card highlight">
                     <h2>Standard Service Call</h2>
                     <div class="price">$150</div>
+                    Examples: 
                     <ul class="feature-list">
                         <li>Unclogging a drain/toilet</li>
                         <li>Hanging a mirror/picture</li>
@@ -35,6 +31,7 @@ import Layout from '../layouts/Layout.astro';
                 <div class="pricing-card">
                     <h2>Upgraded Service Call</h2>
                     <div class="price">$400</div>
+                    Examples: 
                     <ul class="feature-list">
                         <li>Full toilet replacement</li>
                         <li>New furniture assembly</li>
@@ -50,7 +47,7 @@ import Layout from '../layouts/Layout.astro';
                 
                 <div class="pricing-card">
                     <h2>Large Project Service Call</h2>
-                    <div class="price">$ As Quoted</div>
+                    <div class="price">$Ask</div>
                     <ul class="feature-list">
                         <li>Full room painting</li>
                         <li>Pipe replacement</li>
@@ -85,48 +82,13 @@ import Layout from '../layouts/Layout.astro';
             </div>
         </section>
 
-        <section class="cta-section">
-            <div class="cta-content">
-                <h2>Ready for a <span>Quote</span>?</h2>
-                <p>Contact us today to discuss your project and get a free estimate</p>
-                <a href="/contact" class="btn btn-primary">Request a Quote</a>
-            </div>
-        </section>
+        <ContactCTA />
     </div>
 </Layout>
 
 
 
 <style>
-    .page-header {
-        text-align: center;
-        padding: 4rem 1rem;
-        background-color: var(--background-color);
-        color: var(--primary-color);
-        position: relative;
-        
-    }
-
-
-    .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 1.5rem;
-    }
-
-    h1 {
-        font-size: 3rem;
-        margin-bottom: 1rem;
-        font-weight: 800;
-    }
-
-    h1 span, h2 span {
-        color: var(--accent-color);
-    }
-
-    .pricing-section {
-        margin: 5rem 0;
-    }
 
     .pricing-intro {
         max-width: 800px;
@@ -146,14 +108,15 @@ import Layout from '../layouts/Layout.astro';
     }
 
     .pricing-details {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
         gap: 2rem;
         margin-bottom: 4rem;
     }
 
-    .pricing-card {
-        background-color: var(--text-light);
+    .pricing-card {        
+        background-color: color-mix(in srgb, var(--secondary), white 85%);
         border-radius: 8px;
         padding: 2.5rem 2rem;
         text-align: center;
@@ -161,26 +124,18 @@ import Layout from '../layouts/Layout.astro';
         transition: transform 0.3s, box-shadow 0.3s;
         position: relative;
         overflow: hidden;
+        
+        flex: 1 0 250px;      /* Grow, don't shrink, 300px base width */
+        max-width: 300px;     /* Prevent from getting too wide */
+        display: flex;  
+        flex-direction: column;
     }
 
     .pricing-card.highlight {
-        border: 2px solid var(--accent-color);
+        border: 2px solid var(--primary);
+        background-color: color-mix(in srgb, var(--primary), white 85%);
     }
 
-    .pricing-card.highlight::before {
-        content: 'Emergency';
-        position: absolute;
-        top: 0;
-        right: 0;
-        background-color: var(--accent-color);
-        color: #000;
-        font-size: 0.85rem;
-        font-weight: bold;
-        padding: 0.5rem 1rem;
-        transform: translateX(30%) translateY(-10%) rotate(45deg);
-        transform-origin: top right;
-        z-index: 1;
-    }
 
     .pricing-card:hover {
         transform: translateY(-5px);
@@ -190,7 +145,7 @@ import Layout from '../layouts/Layout.astro';
     .price {
         font-size: 3rem;
         font-weight: 700;
-        color: var(--accent-color);
+        color: var(--primary);
         margin-bottom: 1rem;
     }
 
@@ -220,30 +175,39 @@ import Layout from '../layouts/Layout.astro';
 
     .feature-list li::before {
         content: '✓';
-        color: var(--accent-color);
+        color: var(--accent-color-alt);
         position: absolute;
         left: 0;
     }
 
+
+
     .pricing-faqs {
         background-color: var(--text-light);
         border-radius: 8px;
-        padding: 3rem 2rem;
-        margin: 4rem 0;
+        padding: 1rem 2rem;
+        margin: 2rem auto;
         position: relative;
     }
 
     .pricing-faqs h2 {
         text-align: center;
-        color: var(--text-light);
-        margin-bottom: 2.5rem;
+        color: var(--text);
         font-size: 2.2rem;
     }
 
+    .pricing-faqs h2 {
+        margin: 0;
+        padding: 0;
+    }
+
+    .faq-item p {
+        margin-left: 2rem;
+        font-size: 1.1rem;
+    }
+
     .faq-item {
-        margin-bottom: 2rem;
-        padding-bottom: 2rem;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        border-bottom: 2px solid gray;
     }
 
     .faq-item:last-child {
@@ -252,11 +216,6 @@ import Layout from '../layouts/Layout.astro';
         border-bottom: none;
     }
 
-    .faq-item h3 {
-        color: var(--accent-color);
-        margin-bottom: 1rem;
-        font-size: 1.3rem;
-    }
 
 
 

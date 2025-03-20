@@ -1,17 +1,22 @@
+---
+import '../style/global.css';
+---
+
 <!doctype html>
 <html lang="en">
 	<head>
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700" rel="stylesheet">
 		<link rel="preload" as="image" href="/Hlogo.svg">   
-
+		
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700" rel="stylesheet">
+		
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<meta name="description" content="Handyman Hinchman - Professional handyman services including plumbing, electrical work, furniture assembly, and more." />
-		<title>Handyman Hinchman - Professional Handyman Services</title>
+		<title>Handyman Hinchman - Gilbert, AZ Home Services</title>
 	</head>
 	<body>
 		<header>
@@ -19,7 +24,7 @@
 				<div class="logo">
 					<a href="/">
 						<img src="/Hlogo.svg" alt="Handyman Hinchman Logo" class="logo-image" width="50">
-						<span class="logo-text">Handyman <span style="color: var(--accent-color);">Hinchman</span></span>
+						<span class="logo-text">Handyman <span style="color: var(--primary);">Hinchman</span></span>
 					</a>
 				</div>
 				<ul>
@@ -27,7 +32,7 @@
 					<li><a href="/services">Services</a></li>
 					<li><a href="/pricing">Pricing</a></li>
 					<li><a href="/about">About</a></li>
-					<li><a href="/contact"><span id="contact-link">Contact</span></a></li>
+					<a href="/contact" class="btn btn-primary"><li>Contact</li></a>
 				</ul>
 			</nav>
 		</header>
@@ -43,31 +48,10 @@
 </html>
 
 
-
-
 <style>
-	:root {
-		--primary-color: #3b3b3b;
-		--secondary-color: #6b6b6b;
-		--accent-color: #CA5118;
-		--background-color: #dfdfdf;
-		--text-color: #242424;
-		--text-light: #f8f8f8;
-	}
-	
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		min-height: 100%;
-		font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-		color: var(--text-color);
-		background-color: var(--background-color);
-	}
 	
 	header {
-		background-color: var(--primary-color);
-		color: white;
+		color: var();
 		padding: 1rem;
 	}
 	
@@ -78,13 +62,6 @@
 		margin: 0 auto;
 	}
 
-	#contact-link {
-		color: var(--primary-color);
-		background-color: var(--accent-color);
-		padding: 0.5rem 1rem;
-		border-radius: 0.5rem;
-		font-weight: bold;
-	}
 	
 	.logo {
 		display: flex;
@@ -92,7 +69,7 @@
 		gap: 0.5rem;
 		font-size: 1.5rem;
 		font-weight: bold;
-		color: var(--accent-color);
+		color: var(--primary);
 	}
 	
 	.logo-image {
@@ -103,7 +80,7 @@
 		display: inline-block;
 		vertical-align: middle;
 		line-height: 1;
-		color: var(--text-light);
+		color: var(--text);
 	}
 	
 	nav ul {
@@ -112,31 +89,27 @@
 		gap: 2rem;
 		margin: 0;
 		padding: 0;
+		align-items: center;
 	}
+		
+
+	nav ul li a:hover {
+		color: var(--primary);
+		border-bottom: 2px solid var(--primary);
+	}
+
 	
-	nav a {
-		color: var(--text-light);
-		text-decoration: none;
-		font-weight: 500;
-		transition: color 0.3s;
-	}
-	
-	nav a:hover {
-		color: var(--accent-color);
-	}
-	
-	main {
-		/* max-width: 1200px;
-		margin: 0 auto;  */
-	}
+
 	
 	footer {
-		background-color: var(--primary-color);
-		color: var(--text-light);
+		background-color: var(--lightgray);
+		color: var(--text);
 		text-align: center;
 		padding: 1rem;
 		padding-top: 4rem;
 	}
+
+
 
 	@media (max-width: 768px) {
 		nav {

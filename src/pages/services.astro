@@ -1,10 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import ContactCTA from '../components/ContactCTA.astro';
 ---
 
 <Layout>
-    <div class="services-header">
-        <h1>Our <span>Services</span></h1>
+    <div class="page-header">
+        <h1>Our <span class="title-span">Services</span></h1>
         <p>Professional handyman services for all your home repair needs</p>
     </div>
 
@@ -114,44 +115,25 @@ import Layout from '../layouts/Layout.astro';
         </div>
     </section>
 
-    <section class="pricing-cta">
-        <div class="cta-content">
-            <h2>Looking for <span>Pricing</span>?</h2>
-            <p>Visit our pricing page to see our competitive rates and service fees</p>
-            <a href="/pricing" class="btn btn-primary">View Pricing</a>
-        </div>
-    </section>
+    <ContactCTA 
+        title="Looking for Pricing?"
+        description="Visit our pricing page to see our competitive rates and service fees"
+        buttonText="View Pricing"
+        buttonLink="/pricing"
+    />
 </Layout>
 
 <style>
-    .services-header {
-        text-align: center;
-        padding: 2rem 1rem;
-        background-color: var(--background-color);
-        color: var(--primary-color);
-    }
 
-    .services-header h1 {
-        font-size: 2.5rem;
-        margin-bottom: 1rem;
-    }
 
-    h1 span, h2 span {
-        color: var(--accent-color);
-    }
-
-    .services-section {
-        max-width: 900px;
-        margin: 3rem auto;
-    }
 
     .service-category {
         margin-bottom: 4rem;
     }
 
     .service-category h2 {
-        color: var(--primary-color);
-        border-bottom: 2px solid var(--accent-color);
+        color: var(--primary);
+        border-bottom: 2px solid var(--secondary);
         padding-bottom: 0.5rem;
         margin-bottom: 1.5rem;
         position: relative;
@@ -159,13 +141,13 @@ import Layout from '../layouts/Layout.astro';
 
     .services-list {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 2rem;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1rem;
     }
 
     .service-item {
-        background-color: var(--text-light);
-        padding: 1.5rem;
+        background-color: white;
+        padding: 1.1rem;
         margin: 1rem;
         border-radius: 8px;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -177,8 +159,8 @@ import Layout from '../layouts/Layout.astro';
     }
 
     .service-emoji {
-        font-size: 2.5rem;
-        margin-bottom: 1rem;
+        font-size: 2.2rem;
+        margin-bottom: .5rem;
     }
 
     .service-item:hover {
@@ -187,43 +169,11 @@ import Layout from '../layouts/Layout.astro';
     }
 
     .service-item h3 {
-        color: var(--primary-color);
+        color: var(--primary);
         margin-bottom: 0.5rem;
     }
 
-    .pricing-cta {
-        background-color: var(--primary-color);
-        padding: 3rem 1rem;
-        text-align: center;
-        max-width: 900px;
-        color: var(--text-light);
-    }
 
-    .cta-content h2 {
-        font-size: 2rem;
-        margin-bottom: 1rem;
-    }
-
-    .btn {
-        display: inline-block;
-        padding: 0.75rem 1.5rem;
-        border-radius: 4px;
-        text-decoration: none;
-        font-weight: bold;
-        transition: all 0.3s ease;
-        margin-top: 1.5rem;
-    }
-
-    .btn-primary {
-        background-color: var(--accent-color);
-        color: var(--text-color);
-    }
-
-    .btn-primary:hover {
-        background-color: #e67e00;
-        transform: translateY(-2px);
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
 
     @media (max-width: 768px) {
         .services-list {
