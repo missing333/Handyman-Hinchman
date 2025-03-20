@@ -12,7 +12,7 @@ import handwashImage from '../assets/images/handwashing.png';
 			<h1>Need minor home repairs?</h1>
 			<p>We are cheaper than a specialty contractor!</p>
 			<div class="cta-buttons">
-				<a href="/pricing" class="btn btn-primary">Flat Pricing</a>
+				<a href="/pricing" class="btn btn-primary">Simple Pricing</a>
 				<a href="/services" class="btn btn-secondary">Our Services</a>
 			</div>
 		</div>
@@ -186,20 +186,11 @@ import handwashImage from '../assets/images/handwashing.png';
 		flex-wrap: wrap;
 	}
 
-	.btn-primary {
-		background-color: var(--primary);
-		color: var(--background);
-	}
-
-	.btn-primary:hover {
-		transform: scale(1.05);
-		box-shadow: 0 4px 8px rgba(0, 0, 0, .3);
-	}
 
 	.btn-secondary {
 		background-color: var(--background);
 		color: var(--text);
-		border: 2px solid var(--text);
+		border: 1px solid var(--text);
 	}
 
 	.btn-secondary:hover {
@@ -282,8 +273,8 @@ import handwashImage from '../assets/images/handwashing.png';
 	}
 
 	.services-link a:hover {
-		color: var(--secondary);
-		border-bottom: 2px solid var(--secondary);
+		color: var(--accent);
+		border-bottom: 2px solid var(--accent);
 	}
 
 
@@ -331,8 +322,8 @@ import handwashImage from '../assets/images/handwashing.png';
 	}
 
 	.learn-more:hover {
-		color: var(--secondary);
-		border-bottom: 2px solid var(--secondary);
+		color: var(--accent);
+		border-bottom: 2px solid var(--accent);
 	}
 
 
@@ -363,15 +354,21 @@ import handwashImage from '../assets/images/handwashing.png';
 		padding: 1rem;
 	}
 
+	.service-area-card h3 {
+		margin:auto
+	}
+
 
 
 	/* //////////////Testimonials////////////// */
 	.testimonial-card {
 		background-color: #f9fafb;
 		border-radius: 8px;
-		padding: 1.5rem;
+		padding: 2.5rem;
+		padding-bottom: 0;
 		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 		position: relative;
+
 	}
 
 	.testimonial-card::before {

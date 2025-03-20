@@ -1,9 +1,9 @@
 :root {
 	--text: #1a0909;
 	--background: #eaeff5;
-	--primary: #0346ff;
+	--primary: #a0c2f5;
 	--secondary: #a0c2f5;
-	--accent: #d1c575;
+	--accent: #0346ff;
 	
 
 	/* calculated colors */
@@ -80,13 +80,14 @@ section:nth-child(odd) {
 
 .btn-primary {
 	color: var(--primary);
-	border: 3px solid var(--primary);
+	background-color: var(--primary);
+	border: 2px solid var(--primary);
+	border-radius: 8px;
 }
 
 .btn-primary:hover {
-	background-color: var(--primary);
-	color: var(--background);
 	transform: scale(1.05);
+	color: var(--text);
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 

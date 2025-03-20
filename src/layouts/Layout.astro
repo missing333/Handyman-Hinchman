@@ -89,7 +89,7 @@ const criticalCSS = `
 					<li><a href="/services">Services</a></li>
 					<li><a href="/pricing">Pricing</a></li>
 					<li><a href="/about">About</a></li>
-					<li><a href="/contact" class="CTA">Contact</a></li>
+					<li><a href="/contact" class="CTA btn">Contact</a></li>
 				</ul>
 			</nav>
 		</header>
@@ -148,20 +148,19 @@ const criticalCSS = `
 		padding: 0;
 		align-items: center;
 	}
-		
-
 
 	.CTA{
 		color: var(--text);
-		background-color: var(--primary-light);
+		background-color: var(--primary);
 		padding: 0.5rem 1rem;
 		font-weight: bold;
 		border-radius: 8px;
 	}
 
+
 	nav ul li a:hover {
-		color: var(--primary);
-		border-bottom: 2px solid var(--primary);
+		transform: scale(1.05);
+		border-bottom: 2px solid var(--accent);
 	}
 
 	
