@@ -24,8 +24,9 @@ import handwashImage from '../assets/images/handwashing.png';
 				height={500}
 				loading="eager"
 				decoding="async"
+				fetchpriority="high"
 				format="avif"
-				quality={80}
+				quality={75}
 				class="hero-image"
 			/>
 		</div>
@@ -130,6 +131,8 @@ import handwashImage from '../assets/images/handwashing.png';
 <style>
 
 	.hero {
+		content-visibility: auto;
+		contain-intrinsic-size: 500px;
 		color: var(--text);
 		padding: 0 1rem 3rem 1rem;
 		text-align: center;
@@ -156,6 +159,7 @@ import handwashImage from '../assets/images/handwashing.png';
 		overflow: hidden;
 		height: 500px;
 		clip-path: polygon(0 0, 100% 0, 100% 100%, 40% 100%);
+		will-change: transform; /* Optimize compositing */
 	}
 
 	.hero-image {
@@ -236,6 +240,8 @@ import handwashImage from '../assets/images/handwashing.png';
 
 	.services-preview {
 		padding: 0rem 1rem;
+		content-visibility: auto;
+		contain-intrinsic-size: 600px;
 	}
 
 	.service-card {
@@ -289,6 +295,8 @@ import handwashImage from '../assets/images/handwashing.png';
 		margin-top: 4rem;
 		padding: 3rem 1rem;
 		display: flex;
+		content-visibility: auto;
+		contain-intrinsic-size: 400px;
 	}
 
 	.about-content {
@@ -336,6 +344,8 @@ import handwashImage from '../assets/images/handwashing.png';
 		padding: 3rem 1rem;
 		border-radius: 8px;
 		max-width: 900px;
+		content-visibility: auto;
+		contain-intrinsic-size: 400px;
 	}
 
 	.service-area-grid {
