@@ -1,29 +1,66 @@
 ---
 import '../style/global.css';
+
+// Extract critical CSS
+const criticalCSS = `
+  :root {
+    --primary: #00008B;
+    --secondary: #FF8C00;
+    --text: #333;
+    --background: #fff;
+    --lightgray: #f5f5f5;
+    --darkgray: #666;
+  }
+  body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background);
+    color: var(--text);
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  .btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+  }
+`;
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link rel="preload" as="image" href="../assets/images/handwash.png">   
-		
-		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700" rel="stylesheet">
-		
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<meta name="description" content="Handyman Hinchman - Professional handyman services including plumbing, electrical work, furniture assembly, and more." />
 		<title>Handyman Hinchman - Gilbert, AZ Home Services</title>
+		
+		<!-- Preconnect to domains -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		
+		<!-- Preload critical assets -->
+		<link rel="preload" fetchpriority="high" as="image" href="/Hlogo.svg" type="image/svg+xml">
+		
+		<!-- Inline critical CSS -->
+		<style set:html={criticalCSS}></style>
+		
+		<!-- Load fonts with display=swap for better performance -->
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 	</head>
 	<body>
 		<header>
 			<nav>
 				<div class="logo">
 					<a href="/">
-						<img src="/Hlogo.svg" alt="Handyman Hinchman Logo" class="logo-image" width="50">
+						<img src="/Hlogo.svg" alt="Handyman Hinchman Logo" class="logo-image" width="50" height="50" fetchpriority="high">
 						<span class="logo-text">Handyman <span style="color: var(--primary);">Hinchman</span></span>
 					</a>
 				</div>

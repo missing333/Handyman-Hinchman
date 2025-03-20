@@ -30,11 +30,9 @@ const {
     position: relative;
     overflow: hidden;
     padding: 3rem 3rem;
-    margin: 2rem;
+    margin: 2rem auto;
     border-radius: 8px;
-    justify-self: center;
   }
-
 
   .btn {
     display: inline-block;
@@ -42,17 +40,25 @@ const {
     border-radius: 4px;
     text-decoration: none;
     font-weight: bold;
+    transition: transform 0.3s, box-shadow 0.3s;
+    will-change: transform;
   }
 
   .btn-primary {
     font-size: 1.33rem;
     background-color: var(--primary);
     color: var(--background);  
-    transition: all 0.3s ease;
   }
 
   .btn-primary:hover {
-		transform: scale(1.05);
-		box-shadow: 0 4px 8px rgba(0, 0, 0, .3);
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, .3);
+  }
+
+  @media (max-width: 768px) {
+    .contact-cta {
+      padding: 2rem 1rem;
+      margin: 1rem;
+    }
   }
 </style> 

@@ -1,6 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import ContactCTA from '../components/ContactCTA.astro';
+import { Image } from 'astro:assets';
+import handwashImage from '../assets/images/handwash.png';
 ---
 
 <Layout>
@@ -14,7 +16,19 @@ import ContactCTA from '../components/ContactCTA.astro';
 				<a href="/services" class="btn btn-secondary">Our Services</a>
 			</div>
 		</div>
-		<div class="hero-logo"></div>
+		<div class="hero-logo">
+			<Image 
+				src={handwashImage} 
+				alt="Handyman services"
+				width={600}
+				height={500}
+				loading="eager"
+				decoding="async"
+				format="avif"
+				quality={80}
+				class="hero-image"
+			/>
+		</div>
 	</section>
 
 
@@ -135,16 +149,20 @@ import ContactCTA from '../components/ContactCTA.astro';
 		margin-right: -90px; /* Creates overlap */
 	}
 
-	.hero-logo{
+	.hero-logo {
 		grid-column: 2 / 3;
 		grid-row: 1;
-		padding: 0 3rem;
+		position: relative;
+		overflow: hidden;
 		height: 500px;
 		clip-path: polygon(0 0, 100% 0, 100% 100%, 40% 100%);
+	}
+
+	.hero-image {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
 		opacity: 0.75;
-		background-image: url('../assets/images/handwash.png');
-		background-size: cover;
-		background-position: center;
 	}
 
 
@@ -333,6 +351,7 @@ import ContactCTA from '../components/ContactCTA.astro';
 		border-radius: 8px;
 		text-align: center;
 		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+		padding: 1rem;
 	}
 
 
@@ -373,19 +392,19 @@ import ContactCTA from '../components/ContactCTA.astro';
 		}
 
 		.hero {
-        grid-template-columns: 1fr; /* Change to single column */
+			grid-template-columns: 1fr; /* Change to single column */
 		}
 		
 		.hero-content {
 			grid-column: 1; /* Span the only column */
-			grid-row: 1;
+			grid-row: 2;
 			margin: auto; /* Remove the overlap */
 			padding: 1rem;
 		}
 		
 		.hero-logo {
 			grid-column: 1; /* Span the only column */
-			grid-row: 2; /* Place below content */
+			grid-row: 1; /* Place below content */
 			margin-top: 1rem;
 			height: 300px; /* Shorter height on mobile */
 		}
@@ -396,10 +415,6 @@ import ContactCTA from '../components/ContactCTA.astro';
 
 		.hero p {
 			font-size: 1.2rem;
-		}
-
-		.hero-logo {
-			margin-top: 2rem;
 		}
 
 		.services-grid, .testimonial-grid {
